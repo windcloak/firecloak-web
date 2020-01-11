@@ -1,0 +1,10 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+	overflow-y: scroll;
+}
+
+.c-pointer {
+	cursor: pointer;
+}
