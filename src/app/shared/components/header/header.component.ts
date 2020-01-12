@@ -5,7 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+
+ 
+
+  constructor() { }
 
   menus = [
     {
@@ -36,14 +40,7 @@ export class HeaderComponent implements OnInit {
       title: 'Store',
       url: 'store'
     },
-  ]
-  
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ];
 
 
 }

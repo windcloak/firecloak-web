@@ -1,17 +1,12 @@
-<header>
-
-    <div class="row justify-content-center bg-primary">
-        <div class="col-auto">
+<header class="text-center bg-primary">
+ 
             <a class="navbar-brand" href="#">
                 <img src="assets/layout/firecloak-logo.png" width="250" alt="Firecloak logo" class="pt-1">
             </a>
-        </div>
-    </div>
+      
+   
 
-    <div class="row">
-        <div class="col">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+         <nav class="navbar navbar-expand-lg navbar-light">
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,15 +14,13 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="justify-content-center collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav mx-3">
+                    <div class="navbar-nav">
                         <a class="nav-item nav-link text-uppercase mx-3" href="{{menu.url}}" routerLinkActive="active"
                             *ngFor="let menu of menus">{{ menu.title }}</a>
                     </div>
                 </div>
             </nav>
 
-        </div>
-    </div>
 
 
 </header>

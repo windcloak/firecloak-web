@@ -1,0 +1,16 @@
+@import './src/styles/variables';
+
+.carousel-caption{
+    background: rgba(255, 255, 255, 0.7);
+    bottom: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+div.carousel-caption h5 {
+    color:  $tertiary;
+  }
+
+  .carousel-indicators {
+      margin-bottom: 0.5rem;
+  }
