@@ -5,7 +5,7 @@ import { AppCustomPreloader } from './app.routing-loader';
 const routes: Routes = [{
     path: '',
     loadChildren: () => import('./modules/module').then(m => m.HomeModule),
-    // data: { preload: true } // Preload data if you think this will be a popular page
+    data: { preload: true } // Preload data if you think this will be a popular page
 },
 {
     path: '**',
@@ -13,11 +13,9 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
 
-    // imports: [RouterModule.forRoot(routes, { preloadingStrategy: AppCustomPreloader })],
-    // exports: [RouterModule],
-    // providers: [AppCustomPreloader]
+    imports: [RouterModule.forRoot(routes, { preloadingStrategy: AppCustomPreloader })],
+    exports: [RouterModule],
+    providers: [AppCustomPreloader]
 })
 export class AppRoutingModule { }

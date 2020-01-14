@@ -6,6 +6,7 @@ import {
     HomePageComponent,
     AboutPageComponent,
     CosplayPageComponent,
+    CosplayDetailPageComponent,
     TutorialPageComponent,
     ContactPageComponent,
     LinksPageComponent
@@ -25,6 +26,10 @@ const ROUTES = [{
     {
         path: 'cosplay',
         component: CosplayPageComponent
+    },
+    {
+        path: 'cosplay/:id',
+        component: CosplayDetailPageComponent
     },
     {
         path: 'tutorials',

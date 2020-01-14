@@ -14,5 +14,19 @@
   "include": [
     "src/**/*.spec.ts",
     "src/**/*.d.ts"
-  ]
+  ],
+  "paths": {
+    "@myapp/root/*": ["src/*"],
+
+    "@myapp/environment": ["src/environments/environment"],
+
+    "@myapp/core": ["src/app/core/index"],
+    "@myapp/core/*": ["src/app/core/*"],
+
+    "@myapp/shared": ["src/app/shared/index"],
+    "@myapp/shared/*": ["src/app/shared/*"],
+
+    "@myapp/modules": ["src/app/modules/index"],
+    "@myapp/modules/*": ["src/app/modules/*"],
+  }
 }

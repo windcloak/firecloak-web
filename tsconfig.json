@@ -30,8 +30,8 @@
     "@myapp/shared": ["src/app/shared/index"],
     "@myapp/shared/*": ["src/app/shared/*"],
 
-    "@myapp/home": ["src/app/modules/home/index"],
-    "@myapp/home/*": ["src/app/modules/home/*"],
+    "@myapp/modules": ["src/app/modules/index"],
+    "@myapp/modules/*": ["src/app/modules/*"],
   }
 },
   "angularCompilerOptions": {

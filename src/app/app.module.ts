@@ -6,7 +6,7 @@ import { SharedModule } from './shared';
 import { HomeModule } from './modules';
 
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { environment } from '../environments/environment';
     HomeModule,
 
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
+    AngularFirestoreModule, //  database features
   ],
   providers: [],
   bootstrap: [AppComponent]

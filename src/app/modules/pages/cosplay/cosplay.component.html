@@ -1,4 +1,25 @@
 <div class="container">
 
-    cosplay page works
+<div class="row">
+    <div class="col">
+
+<h1 class="text-center py-3">Cosplays</h1>
+
+        <div class="card-deck">
+          
+            <div class="col-sm-3 pb-3 px-1" *ngFor="let cosplay of cosplays | async">
+                <div class="card text-center border-0 bg-transparent" [routerLink]="['/cosplay', cosplay.id]">
+                    <img src="assets/cosplay/{{cosplay.name}}/icon.jpg" class="card-img-top" alt="{{ cosplay.name }}">
+                    <div class="card-body py-2">
+                      <h5 class="card-title">{{ cosplay.character }}</h5>
+                      <p class="card-subtitle text-uppercase"><small>{{ cosplay.series }}</small></p>
+                    </div>
+                  </div>
+            </div>
+ 
+
+
+    </div>
+</div>
+    
 </div>
