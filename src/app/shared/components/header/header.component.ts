@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent {
 
- 
 
   constructor() { }
 
@@ -33,13 +32,9 @@ export class HeaderComponent {
       url: 'contact'
     },
     {
-      title: 'Social',
-      url: 'social'
-    },
-    {
-      title: 'Store',
-      url: 'store'
-    },
+      title: 'Links',
+      url: 'links'
+    }
   ];
 
 
