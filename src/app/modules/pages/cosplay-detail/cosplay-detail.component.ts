@@ -48,24 +48,13 @@ export class CosplayDetailPageComponent implements OnInit {
 	}
 
   
-  private loadProject(name: string) {
+  private loadProject(id: string) {
 
 		this.cosplay= this.db
 			.collection('cosplay')
-			.doc<CosplayDetails>('name')
+			.doc<CosplayDetails>(id)
 			.valueChanges()
 			.pipe(
-        map(p => 
-          {	// get array of TechStack sorted by order
-					p.cosplayMenu= p.cosplayMenu.sort((a, b) => {
-						return (a.order < b.order
-							? -1
-							: (a.order === b.order
-								? 0
-								: 1));
-					});
-					return p;
-				}),
 				tap(_ => {
 					console.log('loaded');
 					this.loading = false;
