@@ -1,15 +1,33 @@
 <div class="container">
 
-<div class="row">
-    <div class="col">
+    <div class="row">
+        <div class="col">
 
-<h1 class="text-center py-3">Cosplay Detail</h1>
+            <h1 class="text-center py-3">{{ (cosplay | async)?.name }} from {{ (cosplay | async)?.series }} Cosplay</h1>
 
-{{ (cosplay | async)?.name }}
+            <img [src]="(cosplay | async)?.mainImgUrl" class="img-fluid float-left pr-3"
+                alt="{{(cosplay | async)?.name}}">
 
-{{ (cosplay | async)?.id }}
+            <p>
+                {{ (cosplay | async)?.description }}
+            </p>
+
+        </div>
 
     </div>
-</div>
-    
+
+    <div class="row pt-3">
+        <div class="col">
+
+            <h2>Tutorial: How to Make {{ (cosplay | async)?.name }}</h2>
+
+            <ul class="cosplayNote">
+                <li *ngFor="let note of (cosplay | async)?.notes" class="py-2"><b>{{ note.title }}:</b> 
+                   <a *ngIf="note.link" href="{{note.link}}" target="_blank">[link]</a> 
+                    {{ note.description }}</li>
+            </ul>
+
+        </div>
+    </div>
+
 </div>

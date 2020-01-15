@@ -4,6 +4,12 @@ footer {
     background-color: darken($secondary, 5%);
 }
 
-// a{
-//     color: $tertiary;
-// }
+$footer-linkcolor: $lightpurple;
+
+a {
+    color: $footer-linkcolor;
+}
+
+a:hover {
+    color: darken($footer-linkcolor, 15%);
+}
