@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
-
+import { NgxGalleryModule } from 'ngx-gallery';
 import { COMPONENTS } from './components';
 
 import './icons';
@@ -19,6 +19,7 @@ import './icons';
 		RouterModule,
 		HttpClientModule,
 		FontAwesomeModule,
+		NgxGalleryModule,
 	],
 	exports: [
 		CommonModule,
@@ -26,7 +27,7 @@ import './icons';
 		RouterModule,
 		HttpClientModule,
 		FontAwesomeModule,
-
+		NgxGalleryModule,
 		COMPONENTS,
 	],
 	entryComponents: [

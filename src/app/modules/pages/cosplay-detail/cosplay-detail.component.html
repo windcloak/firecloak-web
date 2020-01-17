@@ -22,12 +22,28 @@
             <h2>Tutorial: How to Make {{ (cosplay | async)?.name }}</h2>
 
             <ul class="cosplayNote">
-                <li *ngFor="let note of (cosplay | async)?.notes" class="py-2"><b>{{ note.title }}:</b> 
-                   <a *ngIf="note.link" href="{{note.link}}" target="_blank">[link]</a> 
+                <li *ngFor="let note of (cosplay | async)?.notes" class="py-2"><b>{{ note.title }}:</b>
+                    <a *ngIf="note.link" href="{{note.link}}" target="_blank">[link]</a>
                     {{ note.description }}</li>
             </ul>
 
         </div>
     </div>
+
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">Image Gallery</h2>
+            <p class="text-center">Click image to view at full-size</p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+        </div>
+    </div>
+
+
 
 </div>
