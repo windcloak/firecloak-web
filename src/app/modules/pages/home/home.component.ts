@@ -7,6 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
+introCarousel = [
+  {
+    title: 'Cosplay',
+    description: 'Construction notes & gallery'
+  },
+  {
+    title: 'Tutorials',
+    description: 'Step by step instructions on how to make things'
+  },
+  {
+    title: 'Cosplay',
+    description: 'Construction notes & gallery'
+  }
+];
 
   constructor() { }
 

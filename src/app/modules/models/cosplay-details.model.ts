@@ -10,6 +10,7 @@ export class CosplayDetails {
     mainImgUrl: string;
     photographer: string;
     imgGalleryUrls: ImgGalleryUrls[];
+    wipGalleryUrls: string[];
 }
 
 // Construction notes

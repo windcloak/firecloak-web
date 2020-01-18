@@ -30,7 +30,15 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row justify-content-center pb-5">
+        <div class="col-auto">
+            <h2 class="text-center">WIP Photos</h2>
+            <img [src]="(cosplay | async)?.wipGalleryUrls" class="img-fluid" alt="Cosplay WIP">
+<p *ngIf="(cosplay | async)?.wipGalleryUrls > 1">more than 1 photo</p>
+        </div>
+    </div>
+
+    <div class="row pt-2">
         <div class="col">
             <h2 class="text-center">Image Gallery</h2>
             <p class="text-center">Click image to view at full-size</p>
