@@ -20,7 +20,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     pan: {
       direction: Hammer.DIRECTION_ALL,
     }
-  }
+  };
 }
 /* End Custom hammer configuration */
 

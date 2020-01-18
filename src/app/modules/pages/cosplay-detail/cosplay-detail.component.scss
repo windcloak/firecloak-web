@@ -1,14 +1,11 @@
-@import './src/styles/variables';
+@import "./src/styles/variables";
 
 .card:hover {
-    opacity: .8;
+  opacity: 0.8;
 }
 
-ul.cosplayNote{
-    // list-style-type: none;
-
-b {
+ul.cosplayNote {
+  b {
     color: $purple;
-}
-
+  }
 }
