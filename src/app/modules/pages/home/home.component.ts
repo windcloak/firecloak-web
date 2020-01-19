@@ -9,16 +9,19 @@ export class HomePageComponent implements OnInit {
 
 introCarousel = [
   {
-    title: 'Cosplay',
-    description: 'Construction notes & gallery'
+    title: 'cosplay',
+    description: 'Construction notes & gallery',
+    indicator: '#cosplay',
   },
   {
-    title: 'Tutorials',
-    description: 'Step by step instructions on how to make things'
+    title: 'tutorials',
+    description: 'Step by step instructions on how to make things',
+    indicator: '#tutorials',
   },
   {
-    title: 'Cosplay',
-    description: 'Construction notes & gallery'
+    title: 'cosplay',
+    description: 'Construction notes & gallery',
+    indicator: '#cosplay',
   }
 ];
 
