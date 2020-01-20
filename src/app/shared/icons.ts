@@ -3,7 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import * as fas from '@fortawesome/free-solid-svg-icons';
 
 library.add(
-    fas.faArrowUp,
+    // fas.faArrowUp,
 );
 
 import { far } from '@fortawesome/free-regular-svg-icons';

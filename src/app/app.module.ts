@@ -15,6 +15,7 @@ import { NgxGalleryModule } from 'ngx-gallery';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import * as Hammer from 'hammerjs';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 export class CustomHammerConfig extends HammerGestureConfig {
   overrides = {
@@ -40,6 +41,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
 
     NgxGalleryModule,
     LazyLoadImageModule,
+    NgxScrollTopModule,
 
   ],
   providers: [
