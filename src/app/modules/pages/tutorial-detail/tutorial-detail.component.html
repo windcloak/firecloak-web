@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+
+            <h1 class="text-center py-3">{{ (tutorial | async)?.name }} Tutorial</h1>
+
+            <p>{{ (tutorial | async)?.longDescription }}</p>
+
+            <figure class="figure">
+                <img [src]="(tutorial | async)?.mainImgUrl" class="figure-img img-fluid rounded"
+                    alt="{{ (tutorial | async)?.name }}">
+                <figcaption class="figure-caption">{{ (tutorial | async)?.mainImgCaption }}</figcaption>
+            </figure>
+
+
+            <h2>Materials</h2>
+            <ul>
+                <li *ngFor="let material of (tutorial | async)?.materials">
+                    {{ material }}
+                </li>
+            </ul>
+
+            <figure class="figure" *ngFor="let step of (tutorial | async)?.steps">
+                <img [defaultImage]="placeholderImage" [lazyLoad]="step.image" [useSrcset]="true" class="figure-img img-fluid rounded"
+                    alt="{{ step.caption }}">
+                <figcaption class="figure-caption">{{ step.caption }}</figcaption>
+
+                <p>{{ step.description }}</p>
+            </figure>
+
+        </div>
+
+    </div>
+
+
+
+</div>

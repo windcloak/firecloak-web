@@ -33,6 +33,7 @@
     "jquery": "^3.4.1",
     "json": "^9.0.6",
     "moment": "^2.24.0",
+    "ng-lazyload-image": "^7.0.1",
     "ngx-bootstrap": "^5.2.0",
     "ngx-gallery": "^5.10.0",
     "ngx-moment": "^3.5.0",

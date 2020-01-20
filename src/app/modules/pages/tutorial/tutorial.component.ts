@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+
+import {
+  TutorialDetails
+} from '@myapp/modules/models';
 
 @Component({
   selector: 'app-tutorial',
@@ -7,7 +13,13 @@ import { Component } from '@angular/core';
 })
 export class TutorialPageComponent {
 
+  tutorials: Observable<TutorialDetails[]>;
 
-  constructor() { }
+  constructor(private db: AngularFirestore) {
+this.tutorials = this.db
+    .collection<TutorialDetails>('tutorials', ref => ref.orderBy('order', 'desc'))
+    .valueChanges({ idField: 'id' });
+
+  }
 
 }

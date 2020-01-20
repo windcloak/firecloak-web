@@ -1,5 +1,3 @@
-import { AngularFireModule } from '@angular/fire';
-
 export class CosplayDetails {
     name: string;
     order: number;
