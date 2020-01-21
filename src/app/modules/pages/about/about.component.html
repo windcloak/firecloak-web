@@ -1,4 +1,64 @@
 <div class="container">
 
-    about page works
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center py-3">About Me</h1>
+        </div>
+    </div>
+
+    <div class="row justify-content-start">
+        <div class="col-sm-5 pr-0 mr-0">
+
+            <img src="assets/about/may.jpg" alt="Profile pic" class="img-fluid rounded">
+
+        </div>
+
+        <div class="col pl-4">
+            <ul class="pl-3">
+                <li *ngFor="let profile of profiles" class="py-1"><b>{{ profile.title }}</b>: {{ profile.description }}
+                </li>
+                <li class="py-1"><b>Animes I've Watched</b>: <a href="https://myanimelist.net/animelist/firecloak"
+                        target="_blank">Myanimelist.net</a></li>
+            </ul>
+
+            <p>
+                I'm May, and I've been cosplaying since 2010. I'm a cosplayer and photographer. I've been into anime
+                ever since I was a kid (Sailor Moon and Pokemon), so I was bound to run into cosplay eventually. I found
+                pictures of Kipi cosplaying Mio Akiyama, and wanted to try cosplay too! I bought a black dress and got
+                my mom to alter it for me, and I bought a cheap Ebay wig. I wore my casual Mio to a local con, and had
+                so much fun! Let's just say I've been addicted since then.
+            </p>
+
+            <p>
+                I wear a mix of both premade costumes and handmade ones. <a href="https://www.miccostumes.com/" target="_blank">Miccostumes</a> and <a href="https://uwowocosplay.com/" target="_blank">Uwowo</a> are both good brands,
+                though I prefer Miccostumes because their sizing is bigger. I also make a lot of my costumes too! I
+                usually make form fitting costumes and any of the really detailed ones. It's easier to buy a costume
+                that does not need exact measurements to look good (yukata, uniforms).
+            </p>
+
+            <p>
+                I style most of my wigs. I like using <a href="https://www.epiccosplay.com" target="_blank">Epic Cosplay
+                    Wigs</a>, but I also buy from <a href="https://arda-wigs.com" target="_blank">Arda Wigs</a> or Ebay
+                occasionally.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+
+            <h2>About Website</h2> 
+
+            Designed and Developed by me using
+            <ul class="pl-3">
+                <li *ngFor="let website of websiteInfo">
+                    <a href="{{ website.link }}" target="_blank">{{ website.title }}</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
 </div>
