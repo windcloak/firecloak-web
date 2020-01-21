@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -14,11 +14,12 @@ import {
 export class CosplayPageComponent {
 
   cosplays: Observable<CosplayDetails[]>;
+  term: string;
 
   constructor(private db: AngularFirestore) {
-this.cosplays = this.db
-    .collection<CosplayDetails>('cosplay', ref => ref.orderBy('order', 'desc'))
-    .valueChanges({ idField: 'id' });
+    this.cosplays = this.db
+      .collection<CosplayDetails>('cosplay', ref => ref.orderBy('order', 'desc'))
+      .valueChanges({ idField: 'id' });
 
   }
 

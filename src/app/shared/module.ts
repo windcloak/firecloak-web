@@ -8,6 +8,7 @@ import { COMPONENTS } from './components';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { NgxGalleryModule } from 'ngx-gallery';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import './icons';
 
@@ -23,6 +24,7 @@ import './icons';
         FontAwesomeModule,
         NgxGalleryModule,
         LazyLoadImageModule,
+        Ng2SearchPipeModule,
     ],
     exports: [
         CommonModule,
@@ -32,6 +34,7 @@ import './icons';
         FontAwesomeModule,
         NgxGalleryModule,
         LazyLoadImageModule,
+        Ng2SearchPipeModule,
         COMPONENTS,
     ],
     entryComponents: [

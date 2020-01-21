@@ -14,6 +14,7 @@ import {
 export class TutorialPageComponent {
 
   tutorials: Observable<TutorialDetails[]>;
+  term: string;
 
   constructor(private db: AngularFirestore) {
 this.tutorials = this.db

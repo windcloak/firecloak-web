@@ -5,9 +5,23 @@
 
          <h1 class="text-center py-3">Tutorials</h1>
 
+         <div class="row">
+            <div class="col-sm-4">
+        
+              <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">Search</span>
+                </div>
+                <input type="text" [(ngModel)]="term" class="form-control" placeholder="cosplay or prop name"
+                  aria-label="tutorialName" aria-describedby="basic-addon1">
+              </div>
+        
+            </div>
+          </div>
+
          <div class="card-deck">
 
-            <div class="col-sm-3 pb-3 px-1" *ngFor="let tutorial of tutorials | async">
+            <div class="col-sm-3 pb-3 px-1" *ngFor="let tutorial of tutorials | async | filter:term">
                <div class="card text-center border-0 bg-transparent" [routerLink]="['/tutorials', tutorial.id]">
                   <img src="assets/tutorials/{{tutorial.id}}/icon.jpg" class="card-img-top" alt="{{ tutorial.name }}">
                   <div class="card-body py-2">
