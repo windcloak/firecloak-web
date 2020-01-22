@@ -1,1 +1,14 @@
 @import './src/styles/variables';
+$icon-linkcolor: $tertiary;
+
+.icon {
+    color: $icon-linkcolor;
+}
+
+a:hover {
+    color: darken($icon-linkcolor, 15%);
+}
+
+path:hover {
+    fill: darken($icon-linkcolor, 15%);
+}

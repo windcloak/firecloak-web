@@ -18,4 +18,5 @@ library.add(
     fab.faFacebookSquare,
     fab.faInstagram,
     fab.faTwitter,
+    fab.faDeviantart,
 );
