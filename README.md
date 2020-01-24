@@ -39,3 +39,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## When setting up Nodemailer for the first time
+
+// Configure the email transport using the default SMTP transport and a GMail account.
+// For Gmail, enable these:
+// 1. https://www.google.com/settings/security/lesssecureapps
+// 2. https://accounts.google.com/DisplayUnlockCaptcha
+
+in terminal:
+firebase functions:config:set gmail.email="email@gmail.com" gmail.password="gmailPassword"
