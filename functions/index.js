@@ -43,3 +43,4 @@ async function sendEmailNotif(email, name, message) {
     return null;
   }
   
+  

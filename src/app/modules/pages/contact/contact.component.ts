@@ -16,20 +16,19 @@ export class ContactPageComponent implements OnInit {
   submitted = false;
   sending = false;
   contactForm: ContactForm;
-
+  date = new Date();
 
   constructor(private db: AngularFirestore) { }
 
-	ngOnInit() {
-		this.resetContactForm();
-	}
-
-  get diagnostic() { return JSON.stringify(this.contactForm); }
+  ngOnInit() {
+    this.resetContactForm();
+  }
 
   // SEND MESSAGE FORM
   async onSubmit() {
     //  TODO: REPORT PROGRESS
     this.sending = true;
+    this.contactForm.date = this.date;  // today's date
 
     try {
       await this.db.collection('contact').add({ ...this.contactForm });

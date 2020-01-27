@@ -3,12 +3,14 @@ export class CosplayDetails {
     order: number;
     series: string;
     year: number;
-    cosplayNotes: CosplayNotes[];
+    notes: CosplayNotes[];
     description: string;
     mainImgUrl: string;
-    photographer: string;
+    photographer: Photographer[];
+    cosplayers: Cosplayer[];
     imgGalleryUrls: ImgGalleryUrls[];
     wipGalleryUrls: string[];
+    wip: string;
 }
 
 // Construction notes
@@ -21,4 +23,15 @@ export class ImgGalleryUrls {
     small: string;
     medium: string;
     big: string;
+}
+
+export class Photographer {
+    link: string;
+    name: string;
+}
+
+export class Cosplayer {
+    name: string;
+    link: string;
+    char: string;
 }

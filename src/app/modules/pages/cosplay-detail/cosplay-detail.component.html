@@ -51,6 +51,22 @@
         </div>
     </div>
 
+    
+    <div class="row pt-2 justify-content-center">
+        <div class="col-sm-3">
+            <h5>Photographers</h5>
+            <ul>
+                <li *ngFor="let photog of (cosplay | async)?.photographer"><a href="{{photog.link}}" target="_blank">{{ photog.name }}</a></li>
+            </ul>
+        </div>
+
+        <div class="col-auto" [hidden]="!(cosplay | async)?.cosplayers">
+            <h5>Cosplayers</h5>
+            <ul>
+                <li *ngFor="let cos of (cosplay | async)?.cosplayers"><a href="cos.link" target="_blank">{{ cos.name }}</a> - {{ cos.char }}</li>
+            </ul>
+        </div>
+    </div>
 
 
 </div>
