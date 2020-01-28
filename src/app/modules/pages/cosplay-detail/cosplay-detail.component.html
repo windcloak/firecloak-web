@@ -31,9 +31,9 @@
     </div>
 
     <div class="row justify-content-center pb-5">
-        <div class="col-auto">
+        <div class="col-auto" *ngIf="(cosplay | async)?.wip">
             <h2 class="text-center">WIP Photos</h2>
-            <img [src]="(cosplay | async)?.wip" class="img-fluid" alt="Cosplay WIP">
+            <img src="{{(cosplay | async)?.wip}}" class="img-fluid" alt="Cosplay WIP">
         </div>
     </div>
 
@@ -47,7 +47,7 @@
 
     <div class="row">
         <div class="col d-flex justify-content-center">
-            <app-cosplay-gallery></app-cosplay-gallery>
+            <!-- <app-cosplay-gallery></app-cosplay-gallery> -->
         </div>
     </div>
 
