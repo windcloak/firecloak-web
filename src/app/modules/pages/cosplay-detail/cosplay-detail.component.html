@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col">
 
-            <h1 class="text-center py-3">{{ (cosplay | async)?.name }} from {{ (cosplay | async)?.series }} Cosplay</h1>
+            <h1 class="text-center py-3">{{ (cosplay | async)?.name }} - {{ (cosplay | async)?.series }} Cosplay</h1>
 
             <img [src]="(cosplay | async)?.mainImgUrl" class="img-fluid float-left pr-3"
                 alt="{{(cosplay | async)?.name}}">
@@ -37,20 +37,13 @@
         </div>
     </div>
 
-    <div class="row pt-2">
-        <div class="col">
+    <div class="row pt-2 justify-content-center pb-3">
+        <div class="col-auto">
             <h2 class="text-center">Image Gallery</h2>
-            <p class="text-center">Click image to view at full-size</p>
+
+            <app-cosplay-gallery></app-cosplay-gallery>
         </div>
     </div>
-
-
-    <div class="row">
-        <div class="col d-flex justify-content-center">
-            <!-- <app-cosplay-gallery></app-cosplay-gallery> -->
-        </div>
-    </div>
-
     
     <div class="row pt-2 justify-content-center">
         <div class="col-sm-3">
@@ -60,7 +53,7 @@
             </ul>
         </div>
 
-        <div class="col-auto" [hidden]="!(cosplay | async)?.cosplayers">
+        <div class="col-auto">
             <h5>Cosplayers</h5>
             <ul>
                 <li *ngFor="let cos of (cosplay | async)?.cosplayers"><a href="cos.link" target="_blank">{{ cos.name }}</a> - {{ cos.char }}</li>

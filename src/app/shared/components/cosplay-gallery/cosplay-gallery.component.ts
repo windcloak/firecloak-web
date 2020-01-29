@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '@myapp/modules/services';
 
 import {
     CosplayDetails,
@@ -26,7 +27,8 @@ export class CosplayGalleryComponent implements OnInit {
     constructor(
         private location: Location,
         private route: ActivatedRoute,
-        private db: AngularFirestore) { }
+        private db: AngularFirestore,
+        private dataService: DataService) { }
 
     ngOnInit(): void {
 
@@ -78,7 +80,7 @@ export class CosplayGalleryComponent implements OnInit {
 
         this.route.params.subscribe(params => {
             if (params['id']) {
-                this.loadProject(params['id']);
+                this.loadCosplay(params['id']);
 
             } else {
                 // TODO: SHOW AN ERROR MESSAGE OR REDIRECT HOME
@@ -90,20 +92,9 @@ export class CosplayGalleryComponent implements OnInit {
     }
 
 
-    private loadProject(id: string) {
-
-        this.cosplay = this.db
-            .collection('cosplay')
-            .doc<CosplayDetails>(id)
-            .valueChanges()
-            .pipe(
-                tap(_ => {
-                    console.log('loaded');
-                    this.loading = false;
-                })
-
-            );
-
+    private loadCosplay(id: string) {
+        this.cosplay = this.dataService.cosplayDetails(id);
+        this.loading = false;
     }
 
 }

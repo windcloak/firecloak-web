@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { DataService } from '@myapp/modules/services';
 
 import {
     CosplayDetails,
@@ -18,13 +17,15 @@ export class CosplayDetailPageComponent implements OnInit {
 
     cosplay: Observable<CosplayDetails>;
     loading = true;
+    showGallery = false;
+    placeholderImage = 'assets/tutorials/placeholder.gif';
 
     constructor(
         private location: Location,
         private route: ActivatedRoute,
-        private router: Router,
-        private db: AngularFirestore) { }
+        private dataService: DataService) { }
 
+        
     ngOnInit(): void {
         window.scroll(0, 0);
 
@@ -40,21 +41,13 @@ export class CosplayDetailPageComponent implements OnInit {
 
     }
 
+    OpenGallery() {
+        this.showGallery = true;
+    }
 
     private loadCosplay(id: string) {
-
-        this.cosplay = this.db
-            .collection('cosplay')
-            .doc<CosplayDetails>(id)
-            .valueChanges()
-            .pipe(
-                tap(_ => {
-                    console.log('loaded');
-                    this.loading = false;
-                })
-
-            );
-
+        this.cosplay = this.dataService.cosplayDetails(id);
+        this.loading = false;
     }
 
 }

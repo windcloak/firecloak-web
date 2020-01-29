@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { DataService } from '@myapp/modules/services';
 
 import {
   CosplayDetails
@@ -13,14 +13,10 @@ import {
 })
 export class CosplayPageComponent {
 
-  cosplays: Observable<CosplayDetails[]>;
+  cosplays: Observable<CosplayDetails[]> = this.dataService.cosplays;
   term: string;
 
-  constructor(private db: AngularFirestore) {
-    this.cosplays = this.db
-      .collection<CosplayDetails>('cosplay', ref => ref.orderBy('order', 'desc'))
-      .valueChanges({ idField: 'id' });
-
+  constructor(private dataService: DataService) {
   }
 
 }

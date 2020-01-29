@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './routing';
 import { PAGES } from './pages';
 // import { COMPONENTS } from './components';
 import { SharedModule } from '../shared';
+import { SERVICES } from './services';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import { SharedModule } from '../shared';
         SharedModule
     ],
     providers: [
+        SERVICES
     ]
 })
 export class HomeModule { }

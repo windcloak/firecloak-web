@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { DataService } from '@myapp/modules/services';
 
 import {
   TutorialDetails
@@ -13,14 +13,10 @@ import {
 })
 export class TutorialPageComponent {
 
-  tutorials: Observable<TutorialDetails[]>;
+  tutorials: Observable<TutorialDetails[]> = this.dataService.tutorials;
   term: string;
 
-  constructor(private db: AngularFirestore) {
-this.tutorials = this.db
-    .collection<TutorialDetails>('tutorials', ref => ref.orderBy('order', 'desc'))
-    .valueChanges({ idField: 'id' });
-
+  constructor(private dataService: DataService) {
   }
 
 }
