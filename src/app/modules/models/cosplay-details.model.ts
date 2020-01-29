@@ -9,7 +9,7 @@ export class CosplayDetails {
     photographer: Photographer[];
     cosplayers: Cosplayer[];
     imgGalleryUrls: ImgGalleryUrls[];
-    wipGalleryUrls: string[];
+    wipGalleryUrls: WipGalleryUrls[];
     wip: string;
 }
 
@@ -23,6 +23,11 @@ export class ImgGalleryUrls {
     small: string;
     medium: string;
     big: string;
+}
+
+export class WipGalleryUrls {
+    img: string;
+    desc: string;
 }
 
 export class Photographer {

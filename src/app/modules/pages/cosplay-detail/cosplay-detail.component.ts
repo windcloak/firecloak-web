@@ -17,15 +17,29 @@ export class CosplayDetailPageComponent implements OnInit {
 
     cosplay: Observable<CosplayDetails>;
     loading = true;
-    showGallery = false;
     placeholderImage = 'assets/tutorials/placeholder.gif';
+
+    introCarousel = [
+        {
+          title: 'cosplay',
+          description: 'Construction notes & gallery'
+        },
+        {
+          title: 'tutorials',
+          description: 'Step by step instructions on how to make things'
+        },
+        {
+          title: 'cosplay',
+          description: 'Construction notes & gallery'
+        }
+      ];
 
     constructor(
         private location: Location,
         private route: ActivatedRoute,
         private dataService: DataService) { }
 
-        
+
     ngOnInit(): void {
         window.scroll(0, 0);
 
@@ -39,10 +53,6 @@ export class CosplayDetailPageComponent implements OnInit {
             }
         });
 
-    }
-
-    OpenGallery() {
-        this.showGallery = true;
     }
 
     private loadCosplay(id: string) {

@@ -30,33 +30,79 @@
         </div>
     </div>
 
-    <div class="row justify-content-center pb-5">
-        <div class="col-auto" *ngIf="(cosplay | async)?.wip">
-            <h2 class="text-center">WIP Photos</h2>
-            <img src="{{(cosplay | async)?.wip}}" class="img-fluid" alt="Cosplay WIP">
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <h2 class="text-center">WIP</h2>
+            <figure  [hidden]="!(cosplay | async)?.wip">
+                <img [src]="(cosplay | async)?.wip" class="img-fluid" alt="Cosplay WIP">
+            </figure>
         </div>
     </div>
 
-    <div class="row pt-2 justify-content-center pb-3">
-        <div class="col-auto">
-            <h2 class="text-center">Image Gallery</h2>
+
+    <!--START CAROUSEL-->
+    <div class="row justify-content-center" [hidden]="!(cosplay | async)?.wipGalleryUrls">
+        <div class="col-sm-8 pt-3">
+
+            <div id="carouselIntro" class="carousel slide" data-interval="3000" data-ride="carousel" data-pause="hover"
+                data-wrap="true" data-touch="true">
+                <ol class="carousel-indicators">
+                    <li *ngFor="let carouselIndicators of (cosplay | async)?.wipGalleryUrls; let first=first"
+                        [ngClass]="{active: first}"></li>
+                </ol>
+                <div class="carousel-inner">
+
+                    <div class="carousel-item"
+                        *ngFor="let carousel of (cosplay | async)?.wipGalleryUrls; let first=first"
+                        [ngClass]="{active: first}">
+
+                        <img [src]="carousel.img" class="d-block w-100" alt="Cosplay">
+                        <div class="carousel-caption d-none d-md-block justify-content-center">
+                            <p>{{ carousel.desc }}</p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <a class="carousel-control-prev" href="#carouselIntro" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselIntro" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--END CAROUSEL-->
+
+
+    <div class="row pt-5 justify-content-center">
+        <div class="col col-sm-auto">
+            <h2 class="text-center pb-2">Image Gallery</h2>
 
             <app-cosplay-gallery></app-cosplay-gallery>
         </div>
     </div>
-    
+
     <div class="row pt-2 justify-content-center">
-        <div class="col-sm-3">
-            <h5>Photographers</h5>
+        <div class="col col-sm-3">
+            <h6 class="font-weight-bold text-uppercase">Photographers</h6>
             <ul>
-                <li *ngFor="let photog of (cosplay | async)?.photographer"><a href="{{photog.link}}" target="_blank">{{ photog.name }}</a></li>
+                <li *ngFor="let photog of (cosplay | async)?.photographer"><a href="{{photog.link}}"
+                        target="_blank">{{ photog.name }}</a></li>
             </ul>
         </div>
 
-        <div class="col-auto">
-            <h5>Cosplayers</h5>
+        <div class="col col-sm-auto">
+            <h6 class="font-weight-bold text-uppercase">Cosplayers</h6>
             <ul>
-                <li *ngFor="let cos of (cosplay | async)?.cosplayers"><a href="cos.link" target="_blank">{{ cos.name }}</a> - {{ cos.char }}</li>
+                <li *ngFor="let cos of (cosplay | async)?.cosplayers"><a href="cos.link"
+                        target="_blank">{{ cos.name }}</a> - {{ cos.char }}</li>
             </ul>
         </div>
     </div>

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 
 import {
     CosplayDetails,
@@ -29,18 +28,27 @@ export class DataService {
         return this._tutorials;
     }
 
+    cosplayDetails(id: string) {
+        return this.db
+            .collection('cosplay')
+            .doc<CosplayDetails>(id)
+            .valueChanges()
+            .pipe(
+                tap(_ => {
+                    console.log('loaded');
+                })
+            );
+    }
 
- cosplayDetails(id: string) {
-    return this.db
-        .collection('cosplay')
-        .doc<CosplayDetails>(id)
-        .valueChanges()
-        .pipe(
-            tap(_ => {
-                console.log('loaded');
-            })
-
-        );
+    tutorialDetails(id: string) {
+        return this.db
+            .collection('tutorials')
+            .doc<TutorialDetails>(id)
+            .valueChanges()
+            .pipe(
+                tap(_ => {
+                    console.log('loaded');
+                })
+            );
     }
 }
-

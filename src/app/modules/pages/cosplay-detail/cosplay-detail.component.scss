@@ -1,6 +1,16 @@
 @import "./src/styles/variables";
 
-.card:hover {
-  opacity: 0.8;
+.carousel-caption {
+  background: rgba(255, 255, 255, 0.7);
+  bottom: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
+div.carousel-caption p {
+  color: $gray-800;
+}
+
+.carousel-indicators {
+  margin-bottom: 0.5rem;
+}

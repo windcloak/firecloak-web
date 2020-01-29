@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '@myapp/modules/services';
@@ -20,14 +18,12 @@ import { NgxGalleryOptions, NgxGalleryAnimation } from 'ngx-gallery';
 export class CosplayGalleryComponent implements OnInit {
 
     cosplay: Observable<CosplayDetails>;
-    loading = true;
 
     galleryOptions: NgxGalleryOptions[];
 
     constructor(
         private location: Location,
         private route: ActivatedRoute,
-        private db: AngularFirestore,
         private dataService: DataService) { }
 
     ngOnInit(): void {
@@ -94,7 +90,6 @@ export class CosplayGalleryComponent implements OnInit {
 
     private loadCosplay(id: string) {
         this.cosplay = this.dataService.cosplayDetails(id);
-        this.loading = false;
     }
 
 }

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { DataService } from '@myapp/modules/services';
 
 import {
     TutorialDetails,
@@ -24,14 +23,14 @@ export class TutorialDetailPageComponent implements OnInit {
         private location: Location,
         private route: ActivatedRoute,
         private router: Router,
-        private db: AngularFirestore) { }
+        private dataService: DataService) { }
 
     ngOnInit(): void {
         window.scroll(0, 0);
 
         this.route.params.subscribe(params => {
             if (params['id']) {
-                this.loadtutorial(params['id']);
+                this.loadTutorial(params['id']);
 
             } else {
                 // TODO: SHOW AN ERROR MESSAGE OR REDIRECT HOME
@@ -42,20 +41,9 @@ export class TutorialDetailPageComponent implements OnInit {
     }
 
 
-    private loadtutorial(id: string) {
-
-        this.tutorial = this.db
-            .collection('tutorials')
-            .doc<TutorialDetails>(id)
-            .valueChanges()
-            .pipe(
-                tap(_ => {
-                    console.log('loaded');
-                    this.loading = false;
-                })
-
-            );
-
+    private loadTutorial(id: string) {
+        this.tutorial = this.dataService.tutorialDetails(id);
+        this.loading = false;
     }
 
 }
