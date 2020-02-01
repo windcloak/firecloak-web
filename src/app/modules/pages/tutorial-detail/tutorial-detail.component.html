@@ -5,12 +5,10 @@
 
             <h1 class="text-center py-3">{{ (tutorial | async)?.name }} Tutorial</h1>
 
-            <p>{{ (tutorial | async)?.longDescription }}</p>
-
             <figure class="figure">
                 <img [src]="(tutorial | async)?.mainImgUrl" class="figure-img img-fluid rounded"
                     alt="{{ (tutorial | async)?.name }}">
-                <figcaption class="figure-caption">{{ (tutorial | async)?.mainImgCaption }}</figcaption>
+                <figcaption class="figure-caption">{{ (tutorial | async)?.longDescription }}</figcaption>
             </figure>
 
 
@@ -26,7 +24,10 @@
                     alt="{{ step.caption }}">
                 <figcaption class="figure-caption">{{ step.caption }}</figcaption>
 
-                <p>{{ step.description }}</p>
+                <p>
+                    <a *ngIf="step.link" href="{{step.link}}" target="_blank">[download]</a>
+                    {{ step.description }}
+                </p>
             </figure>
 
         </div>

@@ -11,4 +11,5 @@ export class TutorialSteps {
     image: string;
     caption: string;
     description: string;
+    link: string;
 }

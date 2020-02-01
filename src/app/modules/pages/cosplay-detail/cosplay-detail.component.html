@@ -94,7 +94,8 @@
             <h6 class="font-weight-bold text-uppercase">Photographers</h6>
             <ul>
                 <li *ngFor="let photog of (cosplay | async)?.photographer"><a href="{{photog.link}}"
-                        target="_blank">{{ photog.name }}</a></li>
+                        target="_blank">{{ photog.name }}</a>
+                    </li>
             </ul>
         </div>
 
