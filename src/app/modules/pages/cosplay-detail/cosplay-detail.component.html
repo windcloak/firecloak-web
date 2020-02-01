@@ -98,7 +98,7 @@
             </ul>
         </div>
 
-        <div class="col col-sm-auto">
+        <div class="col col-sm-auto" [hidden]="!(cosplay | async)?.cosplayers">
             <h6 class="font-weight-bold text-uppercase">Cosplayers</h6>
             <ul>
                 <li *ngFor="let cos of (cosplay | async)?.cosplayers"><a href="cos.link"
