@@ -30,6 +30,13 @@
                 </p>
             </figure>
 
+            <figure class="figure">
+                <img [defaultImage]="placeholderImage" [lazyLoad]="(tutorial | async)?.mainImgUrl" [useSrcset]="true" class="figure-img img-fluid rounded"
+                    alt="{{ (tutorial | async)?.name }}">
+                <figcaption class="figure-caption">El fin</figcaption>
+            </figure>
+
+
         </div>
 
     </div>

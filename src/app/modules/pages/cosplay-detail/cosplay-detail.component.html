@@ -5,6 +5,8 @@
 
             <h1 class="text-center py-3">{{ (cosplay | async)?.name }} - {{ (cosplay | async)?.series }} Cosplay</h1>
 
+<app-spinner *ngIf="loading" class="text-center"></app-spinner>
+
             <img [src]="(cosplay | async)?.mainImgUrl" class="img-fluid float-left pr-3"
                 alt="{{(cosplay | async)?.name}}">
 
