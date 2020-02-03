@@ -5,6 +5,7 @@ export class TutorialDetails {
     longDescription: string;
     materials: string[];
     steps: TutorialSteps[];
+    mainImgUrl: string;
 }
 
 export class TutorialSteps {
