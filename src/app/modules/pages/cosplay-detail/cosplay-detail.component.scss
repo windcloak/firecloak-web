@@ -2,13 +2,16 @@
 
 .carousel-caption {
   background: rgba(255, 255, 255, 0.7);
-  bottom: 40px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  bottom: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  right: 0;
+  left: 0;
 }
 
 div.carousel-caption p {
   color: $gray-800;
+  font-size: 20px;
 }
 
 .carousel-indicators {
