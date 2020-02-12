@@ -1,7 +1,7 @@
 @import "./src/styles/variables";
 
 .carousel-caption {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   bottom: 30px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -10,7 +10,7 @@
 }
 
 div.carousel-caption p {
-  color: $gray-800;
+  color: white;
   font-size: 20px;
 }
 

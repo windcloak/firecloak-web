@@ -32,10 +32,10 @@
               "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": [
-							"node_modules/jquery/dist/jquery.js",
-							"node_modules/popper.js/dist/umd/popper.js",
-							"node_modules/bootstrap/dist/js/bootstrap.js"
-						]
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -129,6 +129,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-folder-template"
+    }
+  },
+  "defaultProject": "angular-folder-template",
+  "cli": {
+    "analytics": "be16cac0-1045-4aac-a0d1-817168e6c941"
+  }
 }

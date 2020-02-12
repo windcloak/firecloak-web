@@ -42,32 +42,6 @@ export class AboutPageComponent {
     },
   ];
 
-  websiteInfo = [
-    {
-      title: 'Angular 8',
-      link: 'https://angular.io'
-    },
-    {
-      title: 'Bootstrap',
-      link: 'https://getbootstrap.com/'
-    },
-    {
-      title: 'Font Awesome',
-      link: 'https://fontawesome.com/'
-    },
-    {
-      title: 'Ngx-gallery',
-      link: 'https://github.com/lukasz-galka/ngx-gallery'
-    },
-    {
-      title: 'Ngx-scrolltop',
-      link: 'https://github.com/bartholomej/ngx-scrolltop'
-    },
-    {
-      title: 'Ng-lazyload-image',
-      link: 'https://github.com/tjoskar/ng-lazyload-image'
-    },
-  ];
 
   constructor() { }
 
