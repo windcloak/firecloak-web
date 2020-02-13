@@ -40,7 +40,7 @@ export class CosplayGalleryComponent implements OnInit {
                 imageSwipe: true,
                 imageAutoPlay: true,
                 imageAutoPlayPauseOnHover: true,
-                imageAutoPlayInterval: 5000,
+                imageAutoPlayInterval: 8000,
                 imageAnimation: NgxGalleryAnimation.Slide,
 
                 thumbnailsColumns: 5,
