@@ -6,7 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { COMPONENTS } from './components';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
-import { NgxGalleryModule } from 'ngx-gallery';
+// import { NgxGalleryModule } from 'ngx-gallery';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
