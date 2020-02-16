@@ -48,3 +48,6 @@ Thumbs.db
 # images
 src/assets/cosplay
 src/assets/tutorials
+
+# Sensitive keys
+/environments
