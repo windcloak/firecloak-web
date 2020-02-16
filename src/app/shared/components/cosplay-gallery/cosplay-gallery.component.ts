@@ -8,7 +8,7 @@ import {
     CosplayDetails,
 } from '@myapp/modules/models';
 
-import { NgxGalleryOptions, NgxGalleryAnimation } from 'ngx-gallery';
+import { NgxGalleryOptions, NgxGalleryAnimation } from '@kolkov/ngx-gallery';
 
 @Component({
     selector: 'app-cosplay-gallery',

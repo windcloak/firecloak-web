@@ -14,3 +14,9 @@ div.carousel-caption h5 {
 .carousel-indicators {
   margin-bottom: 0.5rem;
 }
+
+.card:hover {
+  opacity: .8;
+  transition: 0.5s;
+  cursor: pointer;
+}

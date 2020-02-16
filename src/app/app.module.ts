@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared';
@@ -9,14 +9,15 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
-import { NgxGalleryModule } from 'ngx-gallery';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 /* Custom Hammer configuration */
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import * as Hammer from 'hammerjs';
-import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { NgxScrollTopModule } from 'ngx-scrolltop';
 
+@Injectable()
 export class CustomHammerConfig extends HammerGestureConfig {
   overrides = {
     pan: {
