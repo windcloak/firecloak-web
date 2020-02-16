@@ -10,7 +10,8 @@ import {
     TutorialPageComponent,
     TutorialDetailPageComponent,
     ContactPageComponent,
-    LinksPageComponent
+    LinksPageComponent,
+    ErrorPageComponent
 } from './pages';
 
 const ROUTES = [{
@@ -48,10 +49,14 @@ const ROUTES = [{
         path: 'links',
         component: LinksPageComponent
     },
+    {
+        path: 'error',
+        component: ErrorPageComponent
+    },
     ]
 }, {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'error'
 },
 ];
 

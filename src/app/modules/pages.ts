@@ -7,6 +7,7 @@ import { TutorialPageComponent } from './pages/tutorial/tutorial.component';
 import { LinksPageComponent } from './pages/links/links.component';
 import { ContactPageComponent } from './pages/contact/contact.component';
 import { TutorialDetailPageComponent } from './pages/tutorial-detail/tutorial-detail.component';
+import { ErrorPageComponent } from './pages/error/error.component';
 
 export { HostPageComponent } from './pages/host/host.component';
 export { HomePageComponent } from './pages/home/home.component';
@@ -17,6 +18,7 @@ export { TutorialPageComponent } from './pages/tutorial/tutorial.component';
 export { TutorialDetailPageComponent } from './pages/tutorial-detail/tutorial-detail.component';
 export { ContactPageComponent } from './pages/contact/contact.component';
 export { LinksPageComponent } from './pages/links/links.component';
+export { ErrorPageComponent } from './pages/error/error.component';
 
 export const PAGES: any[] = [
     HostPageComponent,
@@ -28,4 +30,5 @@ export const PAGES: any[] = [
     TutorialDetailPageComponent,
     ContactPageComponent,
     LinksPageComponent,
+    ErrorPageComponent,
 ];
