@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DataService } from '@myapp/modules/services';
-
+import { tap } from 'rxjs/operators';
 import {
     TutorialDetails,
 } from '@myapp/modules/models';
@@ -33,7 +33,6 @@ export class TutorialDetailPageComponent implements OnInit {
                 this.loadTutorial(params['id']);
 
             } else {
-                // TODO: SHOW AN ERROR MESSAGE OR REDIRECT HOME
                 this.location.back(); // goes home
             }
         });
@@ -42,8 +41,11 @@ export class TutorialDetailPageComponent implements OnInit {
 
 
     private loadTutorial(id: string) {
-        this.tutorial = this.dataService.tutorialDetails(id);
-        this.loading = false;
+        this.tutorial = this.dataService.tutorialDetails(id).pipe(
+            tap(_ => {
+                this.loading = false;
+            })
+        );
     }
 
 }

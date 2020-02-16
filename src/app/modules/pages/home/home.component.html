@@ -45,46 +45,25 @@
         </div>
     </div>
 
-    <div class="row ">
+    <app-spinner *ngIf="loadingCos" class="text-center"></app-spinner>
 
+    <div class="row">
         <div class="col">
-
-
-            <div class="card-deck">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
+          <div class="card-deck justify-content-center">
+    
+            <div class="col-sm-3 pb-3 px-1" *ngFor="let cosplay of cosplays | async | filter:term">
+              <div class="card text-center border-0 bg-transparent" [routerLink]="['/cosplay', cosplay.id]">
+                <img src="assets/cosplay/{{cosplay.id}}/icon.jpg" class="card-img-top" alt="{{ cosplay.name }}">
+                <div class="card-body py-2">
+                  <h5 class="card-title">{{ cosplay.name }}</h5>
+                  <p class="card-subtitle text-uppercase"><small>{{ cosplay.series }}</small></p>
                 </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                            content.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to show that equal
-                            height action.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
+              </div>
             </div>
-
-
+    
+          </div>
         </div>
-
-    </div>
+      </div>
 
     <!--END LATEST COSTUMES-->
 
@@ -92,46 +71,30 @@
     <!--START LATEST TUTORIALS-->
     <div class="row pt-5 pb-3">
         <div class="col">
-            <h1 class="text-center">Recent Tutorials</h1>
+            <h1 class="text-center">Latest Tutorials</h1>
         </div>
     </div>
+
+    <app-spinner *ngIf="loadingTut" class="text-center"></app-spinner>
 
     <div class="row">
 
         <div class="col">
 
 
-            <div class="card-deck">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                            content.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to show that equal
-                            height action.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </div>
+            <div class="card-deck justify-content-center">
 
+                <div class="col-sm-3 pb-3 px-1" *ngFor="let tutorial of tutorials | async | filter:term">
+                   <div class="card text-center border-0 bg-transparent" [routerLink]="['/tutorials', tutorial.id]">
+                      <img src="assets/tutorials/{{tutorial.id}}/icon.jpg" class="card-img-top" alt="{{ tutorial.name }}">
+                      <div class="card-body py-2">
+                         <h5 class="card-title">{{ tutorial.name }}</h5>
+                         <p class="card-subtitle text-uppercase"><small>{{ tutorial.description }}</small></p>
+                      </div>
+                   </div>
+                </div>
+    
+             </div>
 
         </div>
 

@@ -5,6 +5,8 @@
 
             <h1 class="text-center py-3">{{ (tutorial | async)?.name }} Tutorial</h1>
 
+            <app-spinner class="text-center" *ngIf="loading"></app-spinner>
+
             <figure class="figure">
                 <img [src]="(tutorial | async)?.mainImgUrl" class="figure-img img-fluid rounded"
                     alt="{{ (tutorial | async)?.name }}">

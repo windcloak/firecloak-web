@@ -5,7 +5,7 @@
 
             <h1 class="text-center py-3">{{ (cosplay | async)?.name }} - {{ (cosplay | async)?.series }} Cosplay</h1>
 
-<app-spinner *ngIf="loading" class="text-center"></app-spinner>
+            <app-spinner *ngIf="loading" class="text-center"></app-spinner>
 
             <img [src]="(cosplay | async)?.mainImgUrl" class="img-fluid float-left pr-3"
                 alt="{{(cosplay | async)?.name}}">
@@ -95,19 +95,19 @@
         <div class="col col-sm-3">
             <h6 class="font-weight-bold text-uppercase">Photographers</h6>
             <ul>
-                <li *ngFor="let photog of (cosplay | async)?.photographer"><a href="{{photog.link}}"
-                        target="_blank" *ngIf="photog.link">{{ photog.name }}</a>
-                        <span *ngIf="!photog.link">{{ photog.name }}</span>
-                    </li>
+                <li *ngFor="let photog of (cosplay | async)?.photographer"><a href="{{photog.link}}" target="_blank"
+                        *ngIf="photog.link">{{ photog.name }}</a>
+                    <span *ngIf="!photog.link">{{ photog.name }}</span>
+                </li>
             </ul>
         </div>
 
         <div class="col col-sm-auto" [hidden]="!(cosplay | async)?.cosplayers">
             <h6 class="font-weight-bold text-uppercase">Cosplayers</h6>
             <ul>
-                <li *ngFor="let cos of (cosplay | async)?.cosplayers"><a href="{{cos.link}}"
-                        target="_blank" *ngIf="cos.link">{{ cos.name }}</a>
-                        <span *ngIf="!cos.link">{{ cos.name }}</span> - {{ cos.char }}</li>
+                <li *ngFor="let cos of (cosplay | async)?.cosplayers"><a href="{{cos.link}}" target="_blank"
+                        *ngIf="cos.link">{{ cos.name }}</a>
+                    <span *ngIf="!cos.link">{{ cos.name }}</span> - {{ cos.char }}</li>
             </ul>
         </div>
     </div>

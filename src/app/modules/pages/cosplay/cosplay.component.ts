@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { DataService } from '@myapp/modules/services';
-
 import {
   CosplayDetails
 } from '@myapp/modules/models';
@@ -13,16 +13,23 @@ import {
 })
 export class CosplayPageComponent implements OnInit{
 
-  cosplays: Observable<CosplayDetails[]> = this.dataService.cosplays;
+  cosplays: Observable<CosplayDetails[]>;
   term: string;
   loading = true;
 
   constructor(private dataService: DataService) {
   }
 
-ngOnInit(): void {
-  this.cosplays = this.dataService.cosplays;
-  this.loading = false;
+ngOnInit() {
+  this.loadCosplayGrid();
+}
+
+loadCosplayGrid() {
+  this.cosplays = this.dataService.cosplays.pipe(
+    tap(_ => {
+      this.loading = false;
+    })
+  );
 }
 
 }

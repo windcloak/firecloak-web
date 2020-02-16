@@ -16,16 +16,33 @@ export class DataService {
         .collection<CosplayDetails>('cosplay', ref => ref.orderBy('order', 'desc'))
         .valueChanges({ idField: 'id' });
 
+    // Get 3 most recent cosplays
+    private _cosplayPreview = this.db
+        .collection<CosplayDetails>('cosplay', ref => ref.orderBy('order', 'desc').limit(3))
+        .valueChanges({ idField: 'id' });
+
     get cosplays() {
         return this._cosplays;
+    }
+
+    get cosplaysPreview() {
+        return this._cosplayPreview;
     }
 
     private _tutorials = this.db
         .collection<TutorialDetails>('tutorials', ref => ref.orderBy('order', 'desc'))
         .valueChanges({ idField: 'id' });
 
+    private _tutorialsPreview = this.db
+        .collection<TutorialDetails>('tutorials', ref => ref.orderBy('order', 'desc').limit(3))
+        .valueChanges({ idField: 'id' });
+
     get tutorials() {
         return this._tutorials;
+    }
+
+    get tutorialsPreview() {
+        return this._tutorialsPreview;
     }
 
     cosplayDetails(id: string) {
