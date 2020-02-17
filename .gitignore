@@ -50,4 +50,4 @@ src/assets/cosplay
 src/assets/tutorials
 
 # Sensitive keys
-src/environments
+/environments
