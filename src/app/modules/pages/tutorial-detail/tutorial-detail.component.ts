@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DataService } from '@myapp/modules/services';
 import { tap } from 'rxjs/operators';
@@ -19,10 +19,14 @@ export class TutorialDetailPageComponent implements OnInit {
     loading = true;
     placeholderImage = 'assets/tutorials/placeholder.gif';
 
+    // Disqus
+    pageId: string;
+    url: string;
+    title: string;
+
     constructor(
         private location: Location,
         private route: ActivatedRoute,
-        private router: Router,
         private dataService: DataService) { }
 
     ngOnInit(): void {
@@ -31,7 +35,7 @@ export class TutorialDetailPageComponent implements OnInit {
         this.route.params.subscribe(params => {
             if (params['id']) {
                 this.loadTutorial(params['id']);
-
+                this.disqus(params['id']);
             } else {
                 this.location.back(); // goes home
             }
@@ -46,6 +50,12 @@ export class TutorialDetailPageComponent implements OnInit {
                 this.loading = false;
             })
         );
+    }
+
+    private disqus(id: string) {
+        this.pageId = id;
+        this.title = id + '-tutorial';
+        this.url = 'https://firecloak.net/tutorials/' + id;
     }
 
 }

@@ -9,7 +9,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
+import { DisqusModule } from 'ngx-disqus';
+import { DISQUS_SHORTNAME } from 'ngx-disqus';
 import './icons';
 
 @NgModule({
@@ -25,6 +26,7 @@ import './icons';
         NgxGalleryModule,
         LazyLoadImageModule,
         Ng2SearchPipeModule,
+        DisqusModule,
     ],
     exports: [
         CommonModule,
@@ -35,11 +37,16 @@ import './icons';
         NgxGalleryModule,
         LazyLoadImageModule,
         Ng2SearchPipeModule,
+        DisqusModule,
         COMPONENTS,
+        
     ],
     entryComponents: [
         COMPONENTS
     ],
+    providers: [
+        {provide: DISQUS_SHORTNAME, useValue: 'firecloak'}
+      ],
 })
 export class SharedModule {
 }

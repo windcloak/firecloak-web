@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DataService } from '@myapp/modules/services';
 import { tap } from 'rxjs/operators';
@@ -19,6 +19,11 @@ export class CosplayDetailPageComponent implements OnInit {
     loading = true;
     placeholderImage = 'assets/tutorials/placeholder.gif';
 
+    // Disqus
+    pageId: string;
+    url: string;
+    title: string;
+
     constructor(
         private location: Location,
         private route: ActivatedRoute,
@@ -26,12 +31,11 @@ export class CosplayDetailPageComponent implements OnInit {
 
 
     ngOnInit(): void {
-        window.scroll(0, 0);
 
         this.route.params.subscribe(params => {
             if (params['id']) {
                 this.loadCosplay(params['id']);
-
+                this.disqus(params['id']);
             } else {
                 this.location.back(); // goes home
             }
@@ -45,6 +49,12 @@ export class CosplayDetailPageComponent implements OnInit {
                 this.loading = false;
             })
         );
+    }
+
+    private disqus(id: string) {
+        this.pageId = id;
+        this.title = id + '-cosplay';
+        this.url = 'https://firecloak.net/cosplays/' + id;
     }
 
 }

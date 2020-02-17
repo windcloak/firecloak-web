@@ -37,6 +37,7 @@
     "ng-lazyload-image": "^7.0.1",
     "ng2-search-filter": "^0.5.1",
     "ngx-bootstrap": "^5.2.0",
+    "ngx-disqus": "^2.4.3",
     "ngx-moment": "^3.5.0",
     "ngx-scrolltop": "^0.7.1",
     "popper.js": "^1.16.0",
