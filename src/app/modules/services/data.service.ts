@@ -18,7 +18,7 @@ export class DataService {
 
     // Get 3 most recent cosplays
     private _cosplayPreview = this.db
-        .collection<CosplayDetails>('cosplay', ref => ref.orderBy('order', 'desc').limit(3))
+        .collection<CosplayDetails>('cosplay', ref => ref.orderBy('order', 'desc').limit(4))
         .valueChanges({ idField: 'id' });
 
     get cosplays() {
@@ -34,7 +34,7 @@ export class DataService {
         .valueChanges({ idField: 'id' });
 
     private _tutorialsPreview = this.db
-        .collection<TutorialDetails>('tutorials', ref => ref.orderBy('order', 'desc').limit(3))
+        .collection<TutorialDetails>('tutorials', ref => ref.orderBy('order', 'desc').limit(4))
         .valueChanges({ idField: 'id' });
 
     get tutorials() {

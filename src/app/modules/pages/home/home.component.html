@@ -7,11 +7,13 @@
             <div id="carouselIntro" class="carousel slide" data-interval="3000" data-ride="carousel" data-pause="hover"
                 data-wrap="true" data-touch="true">
                 <ol class="carousel-indicators">
-                    <li  *ngFor="let carouselIndicators of introCarousel; let i=index; let first=first" [ngClass]="{active: first}"></li>
+                    <li *ngFor="let carouselIndicators of introCarousel; let i=index; let first=first"
+                        [ngClass]="{active: first}"></li>
                 </ol>
-                <div class="carousel-inner"> 
+                <div class="carousel-inner">
 
-                    <div class="carousel-item" *ngFor="let carousel of introCarousel; let i=index; let first=first" [ngClass]="{active: first}">
+                    <div class="carousel-item" *ngFor="let carousel of introCarousel; let i=index; let first=first"
+                        [ngClass]="{active: first}">
                         <a href="{{ carousel.title }}">
                             <img src="assets/home/slideshow{{i+1}}.jpg" class="d-block w-100" alt="Cosplay">
                             <div class="carousel-caption d-none d-md-block justify-content-center">
@@ -41,7 +43,7 @@
     <!--START LATEST COSTUMES-->
     <div class="row pt-5 pb-3">
         <div class="col">
-            <h1 class="text-center font-weight-medium">Latest Costumes</h1>
+            <h1 class="text-center font-weight-medium">Latest Cosplays</h1>
         </div>
     </div>
 
@@ -49,21 +51,28 @@
 
     <div class="row">
         <div class="col">
-          <div class="card-deck justify-content-center">
-    
-            <div class="col-sm-3 pb-3 px-1" *ngFor="let cosplay of cosplays | async">
-              <div class="card text-center border-0 bg-transparent" [routerLink]="['/cosplay', cosplay.id]">
-                <img src="assets/cosplay/{{cosplay.id}}/icon.jpg" class="card-img-top" alt="{{ cosplay.name }}">
-                <div class="card-body py-2">
-                  <h5 class="card-title">{{ cosplay.name }}</h5>
-                  <p class="card-subtitle text-uppercase"><small>{{ cosplay.series }}</small></p>
+            <div class="card-deck justify-content-center">
+
+                <div class="col-sm-3 pb-3 px-1" *ngFor="let cosplay of cosplays | async">
+                    <div class="card text-center border-0 bg-transparent" [routerLink]="['/cosplay', cosplay.id]">
+                        <img src="assets/cosplay/{{cosplay.id}}/icon.jpg" class="card-img-top" alt="{{ cosplay.name }}">
+                        <div class="card-body py-2">
+                            <h5 class="card-title">{{ cosplay.name }}</h5>
+                            <p class="card-subtitle text-uppercase"><small>{{ cosplay.series }}</small></p>
+                        </div>
+                    </div>
                 </div>
-              </div>
+
             </div>
-    
-          </div>
+
+            <p class="text-right">
+                <a href="cosplay">
+                    <button class="btn btn-link">More Cosplays »</button>
+                </a>
+            </p>
+
         </div>
-      </div>
+    </div>
 
     <!--END LATEST COSTUMES-->
 
@@ -81,20 +90,26 @@
 
         <div class="col">
 
-
             <div class="card-deck justify-content-center">
 
                 <div class="col-sm-3 pb-3 px-1" *ngFor="let tutorial of tutorials | async">
-                   <div class="card text-center border-0 bg-transparent" [routerLink]="['/tutorials', tutorial.id]">
-                      <img src="assets/tutorials/{{tutorial.id}}/icon.jpg" class="card-img-top" alt="{{ tutorial.name }}">
-                      <div class="card-body py-2">
-                         <h5 class="card-title">{{ tutorial.name }}</h5>
-                         <p class="card-subtitle text-uppercase"><small>{{ tutorial.description }}</small></p>
-                      </div>
-                   </div>
+                    <div class="card text-center border-0 bg-transparent" [routerLink]="['/tutorials', tutorial.id]">
+                        <img src="assets/tutorials/{{tutorial.id}}/icon.jpg" class="card-img-top"
+                            alt="{{ tutorial.name }}">
+                        <div class="card-body py-2">
+                            <h5 class="card-title">{{ tutorial.name }}</h5>
+                            <p class="card-subtitle text-uppercase"><small>{{ tutorial.description }}</small></p>
+                        </div>
+                    </div>
                 </div>
-    
-             </div>
+
+            </div>
+
+            <p class="text-right">
+                <a href="tutorials">
+                    <button class="btn btn-link">More Tutorials »</button>
+                </a>
+            </p>
 
         </div>
 
