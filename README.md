@@ -37,7 +37,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 `ng build --prod`
-Add .htaccess file after if it's not there already
+
+Add .htaccess file after if it's not there already to force server to accept routes correctly
+
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
