@@ -1,4 +1,4 @@
-ErrorDocument 404 /error.html
+ErrorDocument 404 /index.html
 
 RewriteEngine On
 RewriteCond %{HTTP_HOST} firecloak\.net [NC]
