@@ -1,12 +1,20 @@
-This is a highly scalable Angular template based off https://github.com/mathisGarberg/angular-folder-structure
+My cosplay portfolio site built with Angular 9/Bootstrap
 
 `npm start` will run the project and open a new tab for you
 
 # Standard Third-Party Libraries
 - Jquery
 - Popper.js
-- Bootstrap
+- Bootstrap 4
 - FontAwesome free
+- @kolkov/ngx-gallery
+- firebase
+- hammerjs
+- ng-lazyload-image
+- ng2-search-filter
+- ngx-bootstrap
+- ngx-disqus
+- ngx-scrolltop
 
 # npm
 
@@ -27,6 +35,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 `ng build --prod`
+Add .htaccess file after if it's not there already
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
