@@ -32,6 +32,8 @@ export class CosplayDetailPageComponent implements OnInit {
 
     ngOnInit(): void {
 
+        window.scroll(0, 0);
+        
         this.route.params.subscribe(params => {
             if (params['id']) {
                 this.loadCosplay(params['id']);
