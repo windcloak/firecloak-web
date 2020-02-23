@@ -43,6 +43,7 @@ export class CosplayGalleryComponent implements OnInit {
                 imageAutoPlayInterval: 8000,
                 imageAnimation: NgxGalleryAnimation.Slide,
 
+                // Thumbnails
                 thumbnailsColumns: 5,
                 thumbnailsPercent: 40,
                 thumbnailsMargin: 20,
@@ -60,15 +61,19 @@ export class CosplayGalleryComponent implements OnInit {
                 previewDownload: true,
                 previewBullets: true,
             },
-            // phones
+            // max width 800
             {
-                breakpoint: 500,
+                breakpoint: 800,
                 width: '100%',
                 imagePercent: 80,
+                thumbnailsPercent: 20,
+                thumbnailsMargin: 20,
+                thumbnailMargin: 20
 
             },
+            // max width 400
             {
-                breakpoint: 300,
+                breakpoint: 400,
                 preview: false
             }
         ];
