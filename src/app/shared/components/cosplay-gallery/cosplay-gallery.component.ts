@@ -71,9 +71,9 @@ export class CosplayGalleryComponent implements OnInit {
                 thumbnailMargin: 20
 
             },
-            // max width 400
+            // max width 450 - no popup in mobile
             {
-                breakpoint: 400,
+                breakpoint: 450,
                 preview: false
             }
         ];
