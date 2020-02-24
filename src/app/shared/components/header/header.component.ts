@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { createPopper } from '@popperjs/core';
 
 @Component({
   selector: 'app-header',
@@ -8,34 +9,35 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent {
 
 
-  constructor() { }
+ menus = [
+  {
+    title: 'Home',
+    url: '/'
+  },
+  {
+    title: 'About',
+    url: 'about'
+  },
+  {
+    title: 'Cosplay',
+    url: 'cosplay'
+  },
+  {
+    title: 'Tutorials',
+    url: 'tutorials'
+  },
+  {
+    title: 'Contact',
+    url: 'contact'
+  },
+  {
+    title: 'Links',
+    url: 'links'
+  }
+];
 
-  menus = [
-    {
-      title: 'Home',
-      url: '/'
-    },
-    {
-      title: 'About',
-      url: 'about'
-    },
-    {
-      title: 'Cosplay',
-      url: 'cosplay'
-    },
-    {
-      title: 'Tutorials',
-      url: 'tutorials'
-    },
-    {
-      title: 'Contact',
-      url: 'contact'
-    },
-    {
-      title: 'Links',
-      url: 'links'
-    }
-  ];
+
+  constructor() { }
 
 
 }
