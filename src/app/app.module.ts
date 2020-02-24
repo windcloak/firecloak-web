@@ -12,21 +12,9 @@ import { environment } from '../environments/environment';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import 'hammerjs';
 
-/* Custom Hammer configuration */
-import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
-import * as Hammer from 'hammerjs';
 import { ServiceWorkerModule } from '@angular/service-worker';
-
-@Injectable()
-export class CustomHammerConfig extends HammerGestureConfig {
-  overrides = {
-    pan: {
-      direction: Hammer.DIRECTION_ALL,
-    }
-  };
-}
-/* End Custom hammer configuration */
 
 @NgModule({
   declarations: [
@@ -48,7 +36,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
 
   ],
   providers: [
-    {provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
+
   ],
   bootstrap: [AppComponent]
 })

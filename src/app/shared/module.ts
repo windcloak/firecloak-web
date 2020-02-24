@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -12,6 +12,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DisqusModule } from 'ngx-disqus';
 import { DISQUS_SHORTNAME } from 'ngx-disqus';
 import './icons';
+
+import 'hammerjs';
 
 @NgModule({
     declarations: [
