@@ -86,7 +86,6 @@
     <div class="row pt-5 justify-content-center">
         <div class="col col-sm-auto">
             <h2 class="text-center pb-2">Image Gallery</h2>
-            <p class="text-center">Click image to view full screen</p>
           
         </div>
     </div>
@@ -98,7 +97,7 @@
 </div>
 
     <div class="row pt-2 justify-content-center">
-        <div class="col col-sm-3">
+        <div class="col col-sm-4 col-lg-3">
             <h6 class="font-weight-bold text-uppercase">Photographers</h6>
             <ul>
                 <li *ngFor="let photog of (cosplay | async)?.photographer"><a href="{{photog.link}}" target="_blank"

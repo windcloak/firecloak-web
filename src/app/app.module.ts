@@ -12,8 +12,7 @@ import { environment } from '../environments/environment';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
-import 'hammerjs';
-
+import { HammerModule } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
@@ -33,6 +32,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     LazyLoadImageModule,
     NgxScrollTopModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    HammerModule,
 
   ],
   providers: [
