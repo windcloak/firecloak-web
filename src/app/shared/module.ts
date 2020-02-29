@@ -15,6 +15,20 @@ import './icons';
 
 import 'hammerjs';
 
+import { HammerModule } from '@angular/platform-browser';
+
+import {
+  HammerGestureConfig,
+  HAMMER_GESTURE_CONFIG
+} from '@angular/platform-browser';
+
+export class MyHammerConfig extends HammerGestureConfig {
+  overrides = {
+    pinch: { enable: false },
+    rotate: { enable: false } as any
+  };
+}
+
 @NgModule({
     declarations: [
         COMPONENTS
@@ -29,6 +43,7 @@ import 'hammerjs';
         LazyLoadImageModule,
         Ng2SearchPipeModule,
         DisqusModule,
+        HammerModule,
     ],
     exports: [
         CommonModule,
@@ -47,7 +62,11 @@ import 'hammerjs';
         COMPONENTS
     ],
     providers: [
-        {provide: DISQUS_SHORTNAME, useValue: 'firecloak'}
+        {provide: DISQUS_SHORTNAME, useValue: 'firecloak'},
+        {
+            provide: HAMMER_GESTURE_CONFIG,
+            useClass: MyHammerConfig
+          }
       ],
 })
 export class SharedModule {
