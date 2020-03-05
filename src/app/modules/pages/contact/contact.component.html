@@ -2,69 +2,73 @@
 
     <div class="row pt-3 justify-content-center">
 
-        <div class="col-auto">
+
+
+        <div class="col text-center">
 
             <h1 class="text-center pb-3">Contact Me</h1>
-            <p>Got a question? Email me at <a href="mailto:xfirecloak@gmail.com">xfirecloak@gmail.com</a> or get in touch below! (<i>Note:</i> I do not do cosplay commissions.)</p>
+            <p>Got a question? Email me at <a href="mailto:xfirecloak@gmail.com">xfirecloak@gmail.com</a> or get in
+                touch below!</p>
+        </div>
+    </div>
 
-            <div class="container d-flex justify-content-center pt-4">
+    <div class="row justify-content-center">
 
-                <div class="col-sm-8" [hidden]="submitted">
-
-                    <form #contact="ngForm" (ngSubmit)="onSubmit()">
-                        <div class="form-group row">
-                            <label for="name"><b>Name</b></label>
-                            <input type="text" class="form-control" id="name" required [(ngModel)]="contactForm.name"
-                                name="name" #name="ngModel">
-
-                            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                                Name is required
-                            </div>
-
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email"><b>Email</b></label>
-                            <input type="text" class="form-control" id="email" required [(ngModel)]="contactForm.email"
-                                name="email" #email="ngModel">
-
-                            <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
-                                Email is required
-                            </div>
-
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="message"><b>Message</b></label>
-                            <textarea class="form-control" rows="4" cols="50" aria-label="with textarea" id="message"
-                               required [(ngModel)]="contactForm.message" name="message" #message="ngModel"></textarea>
+        <div class="col-sm-3 col-auto">
+            <img src="assets/contact/contact.png" alt="Profile pic" class="img-fluid pr-sm-5">
+        </div>
 
 
-                        </div>
+        <div class="col-sm-5 d-flex align-self-center mx-2" [hidden]="submitted">
 
-                        <div [hidden]="message.valid || message.pristine" class="alert alert-danger">
-                            Message is required
-                        </div>
+            <form #contact="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group row">
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" class="form-control" id="name" required [(ngModel)]="contactForm.name"
+                        name="name" #name="ngModel">
 
-                        <button type="submit" class="btn btn-primary" [disabled]="!contact.form.valid">Submit</button>
+                    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                        Name is required
+                    </div>
 
-                    </form>
+                </div>
 
+                <div class="form-group row">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" class="form-control" id="email" required [(ngModel)]="contactForm.email"
+                        name="email" #email="ngModel">
+
+                    <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                        Email is required
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <label for="message"><b>Message</b></label>
+                    <textarea class="form-control" rows="4" cols="60" aria-label="with textarea" id="message" required
+                        [(ngModel)]="contactForm.message" name="message" #message="ngModel"></textarea>
 
 
                 </div>
 
-                <div [hidden]="!submitted">
-                    <h3 class="text-success">Your message has been submitted. I will get back to you shortly.</h3>
-                    <h3><button class="btn btn-link" (click)="resetForm(); contact.reset()">Send another message?</button></h3>
-
+                <div [hidden]="message.valid || message.pristine" class="alert alert-danger">
+                    Message is required
                 </div>
 
+                <button type="submit" class="btn btn-primary" [disabled]="!contact.form.valid">Submit</button>
 
-            </div>
+            </form>
+
+
 
         </div>
 
+        <div [hidden]="!submitted">
+            <h3 class="text-success">Your message has been submitted. I will get back to you shortly.</h3>
+            <h3><button class="btn btn-link" (click)="resetForm(); contact.reset()">Send another message?</button></h3>
+
+        </div>
 
 
     </div>
