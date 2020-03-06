@@ -4,7 +4,7 @@
 
 
 
-        <div class="col text-center">
+        <div class="col text-lg-center">
 
             <h1 class="text-center pb-3">Contact Me</h1>
             <p>Got a question? Email me at <a href="mailto:xfirecloak@gmail.com">xfirecloak@gmail.com</a> or get in
@@ -14,12 +14,12 @@
 
     <div class="row justify-content-center">
 
-        <div class="col-sm-3 col-auto">
+        <div class="d-none d-lg-block col-lg-3 col-auto">
             <img src="assets/contact/contact.png" alt="Profile pic" class="img-fluid pr-sm-5">
         </div>
 
 
-        <div class="col-sm-5 d-flex align-self-center mx-2" [hidden]="submitted">
+        <div class="col-lg-5 d-flex align-self-center mx-3" [hidden]="submitted">
 
             <form #contact="ngForm" (ngSubmit)="onSubmit()">
                 <div class="form-group row">
