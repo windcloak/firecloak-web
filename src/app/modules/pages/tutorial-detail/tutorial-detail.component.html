@@ -15,6 +15,9 @@
 
 
             <h2>Materials</h2>
+            
+            <app-spinner *ngIf="loading" class="text-center"></app-spinner>
+
             <ul>
                 <li *ngFor="let material of (tutorial | async)?.materials">
                     {{ material }}

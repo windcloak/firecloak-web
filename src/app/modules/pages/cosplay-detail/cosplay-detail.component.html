@@ -23,6 +23,8 @@
 
             <h2>Tutorial: How to Make {{ (cosplay | async)?.name }}</h2>
 
+            <app-spinner *ngIf="loading" class="text-center"></app-spinner>
+
             <ul>
                 <li *ngFor="let note of (cosplay | async)?.notes" class="py-2"><b>{{ note.title }}:</b>
                     <a *ngIf="note.link" href="{{note.link}}" target="_blank">[link]</a>
@@ -43,6 +45,8 @@
 
 
     <!--START CAROUSEL-->
+    <app-spinner *ngIf="loading" class="text-center"></app-spinner>
+    
     <div class="row justify-content-center" [hidden]="!(cosplay | async)?.wipGalleryUrls">
         <div class="col col-lg-8 pt-3">
 

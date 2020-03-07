@@ -5,8 +5,6 @@
 
          <h1 class="text-center py-3">Tutorials</h1>
 
-         <app-spinner class="text-center" *ngIf="loading"></app-spinner>
-
          <div class="row justify-content-center">
             <div class="col-sm-8 col-lg-5">
         
@@ -18,6 +16,8 @@
                   aria-label="tutorialName" aria-describedby="basic-addon1">
               </div>
         
+              <app-spinner *ngIf="loading" class="text-center"></app-spinner>
+
             </div>
           </div>
 

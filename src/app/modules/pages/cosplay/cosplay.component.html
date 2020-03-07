@@ -3,9 +3,6 @@
   <div class="row">
     <div class="col">
       <h1 class="text-center py-3">Cosplays</h1>
-
-      <app-spinner class="text-center pb-3" *ngIf="loading"></app-spinner>
-
     </div>
   </div>
 
@@ -20,11 +17,14 @@
           aria-label="cosplayOrSeries" aria-describedby="basic-addon1">
       </div>
 
+      <app-spinner *ngIf="loading" class="text-center"></app-spinner>
+
     </div>
   </div>
 
   <div class="row">
     <div class="col">
+
       <div class="card-deck">
 
         <div class="col-sm-6 col-lg-3 pb-3 px-1" *ngFor="let cosplay of cosplays | async | filter:term">
