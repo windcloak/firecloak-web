@@ -13,21 +13,21 @@ import { DisqusModule } from 'ngx-disqus';
 import { DISQUS_SHORTNAME } from 'ngx-disqus';
 import './icons';
 
-import 'hammerjs';
+// import 'hammerjs';
 
-import { HammerModule } from '@angular/platform-browser';
+import { HammerModule } from '@angular/platform-browser'; // swipe
 
-import {
-  HammerGestureConfig,
-  HAMMER_GESTURE_CONFIG
-} from '@angular/platform-browser';
+// import {
+//   HammerGestureConfig,
+//   HAMMER_GESTURE_CONFIG
+// } from '@angular/platform-browser';
 
-export class MyHammerConfig extends HammerGestureConfig {
-  overrides = {
-    pinch: { enable: false },
-    rotate: { enable: false } as any
-  };
-}
+// export class MyHammerConfig extends HammerGestureConfig {
+//   overrides = {
+//     pinch: { enable: false },
+//     rotate: { enable: false } as any
+//   };
+// }
 
 @NgModule({
     declarations: [
@@ -63,10 +63,10 @@ export class MyHammerConfig extends HammerGestureConfig {
     ],
     providers: [
         {provide: DISQUS_SHORTNAME, useValue: 'firecloak'},
-        {
-            provide: HAMMER_GESTURE_CONFIG,
-            useClass: MyHammerConfig
-          }
+        // {
+        //     provide: HAMMER_GESTURE_CONFIG,
+        //     useClass: MyHammerConfig
+        //   }
       ],
 })
 export class SharedModule {
