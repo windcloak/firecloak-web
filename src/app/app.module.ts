@@ -7,11 +7,15 @@ import { HomeModule } from './modules';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAnalyticsModule, ScreenTrackingService, CONFIG } from '@angular/fire/analytics';
 
 import { environment } from '../environments/environment';
 
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { ServiceWorkerModule } from '@angular/service-worker';
+
+
+
 
 @NgModule({
   declarations: [
@@ -25,13 +29,19 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, //  database features
+    AngularFireAnalyticsModule,
 
     NgxScrollTopModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 
   ],
   providers: [
-
+    ScreenTrackingService,
+    { provide: CONFIG, useValue: {
+      send_page_view: false,
+      allow_ad_personalization_signals: false,
+      anonymize_ip: true
+    } },
   ],
   bootstrap: [AppComponent]
 })

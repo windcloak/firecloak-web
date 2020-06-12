@@ -13,61 +13,43 @@ import { DisqusModule } from 'ngx-disqus';
 import { DISQUS_SHORTNAME } from 'ngx-disqus';
 import './icons';
 
-// import 'hammerjs';
-
-import { HammerModule } from '@angular/platform-browser'; // swipe
-
-// import {
-//   HammerGestureConfig,
-//   HAMMER_GESTURE_CONFIG
-// } from '@angular/platform-browser';
-
-// export class MyHammerConfig extends HammerGestureConfig {
-//   overrides = {
-//     pinch: { enable: false },
-//     rotate: { enable: false } as any
-//   };
-// }
+import { HammerModule } from '@angular/platform-browser'; // image swipe
 
 @NgModule({
-    declarations: [
-        COMPONENTS
-    ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        RouterModule,
-        HttpClientModule,
-        FontAwesomeModule,
-        NgxGalleryModule,
-        LazyLoadImageModule,
-        Ng2SearchPipeModule,
-        DisqusModule,
-        HammerModule,
-    ],
-    exports: [
-        CommonModule,
-        FormsModule,
-        RouterModule,
-        HttpClientModule,
-        FontAwesomeModule,
-        NgxGalleryModule,
-        LazyLoadImageModule,
-        Ng2SearchPipeModule,
-        DisqusModule,
-        COMPONENTS,
-        
-    ],
-    entryComponents: [
-        COMPONENTS
-    ],
-    providers: [
-        {provide: DISQUS_SHORTNAME, useValue: 'firecloak'},
-        // {
-        //     provide: HAMMER_GESTURE_CONFIG,
-        //     useClass: MyHammerConfig
-        //   }
-      ],
+  declarations: [
+    COMPONENTS
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    NgxGalleryModule,
+    LazyLoadImageModule,
+    Ng2SearchPipeModule,
+    DisqusModule,
+    HammerModule,
+  ],
+  exports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    NgxGalleryModule,
+    LazyLoadImageModule,
+    Ng2SearchPipeModule,
+    DisqusModule,
+    COMPONENTS,
+
+  ],
+  entryComponents: [
+    COMPONENTS
+  ],
+  providers: [
+    { provide: DISQUS_SHORTNAME, useValue: 'firecloak' },
+  ],
 })
 export class SharedModule {
 }
