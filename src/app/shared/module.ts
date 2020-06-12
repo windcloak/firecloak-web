@@ -12,7 +12,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DisqusModule } from 'ngx-disqus';
 import { DISQUS_SHORTNAME } from 'ngx-disqus';
 import './icons';
-// import 'hammerjs';
+import 'hammerjs';
 
 import { HammerModule } from '@angular/platform-browser'; // image swipe
 import {
