@@ -21,21 +21,44 @@ export class HomePageComponent implements OnInit {
   loadingCos = true;
   loadingTut = true;
 
-introCarousel = [
-  {
-    title: 'cosplay',
-    description: 'Construction notes & gallery'
-  },
-  {
-    title: 'tutorials',
-    description: 'Step by step instructions on how to make things'
-  },
-  {
-    title: 'cosplay',
-    description: 'Construction notes & gallery'
-  }
-];
- 
+  introCarousel = [
+    {
+      id: 'princess-peach-smash-bros-ultimate',
+      character: 'Princess Peach',
+      series: 'Super Mario Bros',
+    },
+    {
+      id: 'holo-merchants-spice-and-wolf',
+      character: 'Holo',
+      series: 'Spice&Wolf',
+    },
+    {
+      id: 'aqua-konosuba',
+      character: 'Aqua',
+      series: 'Konosuba!',
+    },
+    {
+      id: 'tohru-swimsuit-dragon-maid',
+      character: 'Tohru',
+      series: 'Ms. Kobayashi\'s Dragon Maid',
+    },
+    {
+      id: 'louise-familiar-of-zero',
+      character: 'Louise',
+      series: 'Familiar of Zero',
+    },
+    {
+      id: 'violet-evergarden',
+      character: 'Violet',
+      series: 'Violet Evergarden',
+    },
+    {
+      id: 'nami-gangsta-onepiece',
+      character: 'Nami',
+      series: 'One Piece',
+    },
+  ];
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {

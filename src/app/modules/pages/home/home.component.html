@@ -14,12 +14,14 @@
 
                     <div class="carousel-item" *ngFor="let carousel of introCarousel; let i=index; let first=first"
                         [ngClass]="{active: first}">
-                        <a href="{{ carousel.title }}">
+                        <a href="cosplay/{{ carousel.id }}">
                             <img src="assets/home/slideshow{{i+1}}.jpg" class="d-block w-100" alt="Cosplay">
+
                             <div class="carousel-caption d-none d-md-block justify-content-center">
-                                <h5 class="font-weight-bold text-uppercase">{{ carousel.title }}</h5>
-                                <p>{{ carousel.description }}</p>
+                                <h5 class="font-weight-bold text-uppercase">{{ carousel.character }}</h5>
+                                <p>{{ carousel.series }}</p>
                             </div>
+
                         </a>
                     </div>
 

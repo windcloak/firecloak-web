@@ -37,6 +37,10 @@ otherCosplayers = [
 
 textCosplayers = [
   {
+    name: 'Calssara',
+    link: 'http://www.calssara.com/'
+  },
+  {
     name: 'Maridah',
     link: 'https://www.maridah.com/'
   },
@@ -49,6 +53,10 @@ textCosplayers = [
     link: 'https://starbuxx.wixsite.com/cosplay'
   },
   {
+    name: 'Vicious Cosplay',
+    link: 'http://viciouscosplay.com/'
+  },
+  {
     name: 'Yumi Cosplay',
     link: 'http://yumicosplay.fr/'
   },
@@ -59,7 +67,7 @@ textCosplayers = [
   {
     name: 'Yayahan',
     link: 'http://yayahan.com'
-  }
+  },
 ];
 
   constructor() {
