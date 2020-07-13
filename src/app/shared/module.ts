@@ -20,6 +20,7 @@ import {
   HAMMER_GESTURE_CONFIG
 } from '@angular/platform-browser';
 
+@Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = {
     pinch: { enable: false },

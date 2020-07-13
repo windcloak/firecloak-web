@@ -1,4 +1,4 @@
-My cosplay portfolio site built with Angular 9/Bootstrap
+My cosplay portfolio site built with Angular/Bootstrap (front-end) and Firebase Firestore (back-end)
 
 Live: https://firecloak.net
 
@@ -6,10 +6,10 @@ Live: https://firecloak.net
 
 # Standard Third-Party Libraries
 - Jquery
-- Popper.js
+- popperjs/core
 - Bootstrap 4
 - FontAwesome free
-- @kolkov/ngx-gallery
+- kolkov/ngx-gallery
 - firebase
 - hammerjs
 - ng-lazyload-image
@@ -22,9 +22,11 @@ Live: https://firecloak.net
 
 Run `npm install`
 
-# AngularFolderTemplate
+# firecloak-web
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
+
+Updated to Angular 10
 
 ## Development server
 
