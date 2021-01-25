@@ -14,7 +14,7 @@ const routes: Routes = [{
 
 @NgModule({
 
-    imports: [RouterModule.forRoot(routes, { preloadingStrategy: AppCustomPreloader })],
+    imports: [RouterModule.forRoot(routes, { preloadingStrategy: AppCustomPreloader, relativeLinkResolution: 'legacy' })],
     exports: [RouterModule],
     providers: [AppCustomPreloader]
 })
