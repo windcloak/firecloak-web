@@ -45,10 +45,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# images
-src/assets/cosplay
-src/assets/tutorials
-
 # other files
 WS_FTP.LOG
 ws_ftp.log
