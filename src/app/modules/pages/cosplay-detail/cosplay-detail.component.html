@@ -29,6 +29,7 @@
                 <li *ngFor="let note of (cosplay | async)?.notes" class="py-2"><b>{{ note.title }}:</b>
                     <a *ngIf="note.link" href="{{note.link}}" target="_blank">[link]</a>
                     {{ note.description }}</li>
+                <li class="py-2"><b>Debut:</b> {{ (cosplay | async)?.year }}</li>
             </ul>
 
         </div>
