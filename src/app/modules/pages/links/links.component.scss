@@ -12,3 +12,10 @@ a:hover {
 path:hover {
     fill: darken($icon-linkcolor, 15%);
 }
+
+.list-group-item {
+    background: none;
+    font-size: 120%;
+    border: 0;
+    align-items: center;
+}

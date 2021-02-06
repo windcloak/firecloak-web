@@ -9,11 +9,6 @@ export class LinksPageComponent {
 
 otherCosplayers = [
   {
-    name: 'Melfina Cosplay',
-    link: 'http://melfinacosplay.com/',
-    image: 'assets/links/melfina.png'
-  },
-  {
     name: 'Yashuntafun',
     link: 'http://www.yashuntafun.com/',
     image: 'assets/links/yashuntafun.jpg'
@@ -22,11 +17,6 @@ otherCosplayers = [
     name: 'Puyoda',
     link: 'http://cosplay.silent-white.com/',
     image: 'assets/links/puyoda.jpg'
-  },
-  {
-    name: 'Singing Away',
-    link: 'http://singingaway.net/',
-    image: 'assets/links/singingaway.jpg'
   },
   {
     name: 'Hezachan',
@@ -55,10 +45,6 @@ textCosplayers = [
   {
     name: 'Vicious Cosplay',
     link: 'http://viciouscosplay.com/'
-  },
-  {
-    name: 'Yumi Cosplay',
-    link: 'http://yumicosplay.fr/'
   },
   {
     name: 'Yuurisans',

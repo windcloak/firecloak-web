@@ -10,7 +10,10 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { faFacebookSquare,
   faInstagram,
   faTwitter,
-  faDeviantart } from '@fortawesome/free-brands-svg-icons';
+  faDeviantart, 
+  faTiktok,
+  faYoutube,
+  faTumblr} from '@fortawesome/free-brands-svg-icons';
 
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -80,6 +83,9 @@ export class SharedModule {
       faInstagram,
       faTwitter,
       faDeviantart,
+      faTiktok,
+      faYoutube,
+      faTumblr,
     );
   }
 }
