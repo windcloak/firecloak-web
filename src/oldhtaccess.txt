@@ -1,0 +1,6 @@
+ErrorDocument 404 /index.html
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} firecloak\.net [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://firecloak.net/$1 [R,L]
